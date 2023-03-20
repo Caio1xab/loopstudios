@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#hero {
+  background-image: url("../images/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 576px) {
+  #hero {
+    background-image: url("../images/mobile/image-hero.jpg");
+    background-position: center;
+  }
+}
+
+@layer base {
+  h5 {
+    @apply absolute text-white text-2xl p-5 bottom-2 duration-500 group-hover:scale-110 group-hover:text-black;
+  }
+}
+
+.featureContainer {
+  @apply flex flex-col container max-w-6xl mx-auto my-36 px-6 relative space-y-5 text-gray-900 md:flex-row md:px-0 md:space-y-0;
+}
+
+.itemsContainer {
+  @apply w-full flex flex-col space-y-6 justify-between uppercase text-white md:flex-row md:space-y-0 md:space-x-7;
+}
+
+.gradientDivision {
+  @apply absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-20;
+}
+
+.btn {
+  @apply border-2 border-black px-10 py-2 hover:bg-black duration-500;
+}
+
+.spanBtn {
+  @apply uppercase group-hover:text-white text-lg font-alata font-medium tracking-widest duration-500;
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
